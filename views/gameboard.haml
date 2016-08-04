@@ -9,3 +9,7 @@
     %ul
       - @guesses.each do |guess|
         %li =guess
+    %form{:action => "/win"}
+      %input{:type => "submit", :value => "Win!"}
+    %form{:action => "/lose"}
+      %input{:type => "submit", :value => "Lose!"}
