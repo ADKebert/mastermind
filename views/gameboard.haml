@@ -8,8 +8,15 @@
     %h1 Welcome to Mastermind!
     %ul
       - @guesses.each do |guess|
-        %li =guess
+        %li= guess[0]
+        %li= guess[1]
+        %li= guess[2]
+        %li= guess[3]
+    %form{:action => "/", :method => "post"}
+      %input{:type => "submit", :value => "Guess!"}
     %form{:action => "/win"}
       %input{:type => "submit", :value => "Win!"}
     %form{:action => "/lose"}
       %input{:type => "submit", :value => "Lose!"}
+    %form{:action => "/restart", :method => "post"}
+      %input{:type => "submit", :value => "Restart!"}
