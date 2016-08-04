@@ -11,7 +11,10 @@ get "/" do
 end
 
 post "/" do
-  $mastermind_cpu.guess %w{red green blue green}
+  $mastermind_cpu.guess [params["Peg1"],
+                         params["Peg2"],
+                         params["Peg3"],
+                         params["Peg4"]]
   redirect "/"
 end
 

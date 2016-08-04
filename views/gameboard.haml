@@ -13,6 +13,34 @@
         %li= guess[2]
         %li= guess[3]
     %form{:action => "/", :method => "post"}
+      %select{:name => "Peg1"}
+        %option Blue
+        %option Orange
+        %option Green
+        %option Purple
+        %option Yellow
+        %option Pink
+      %select{:name => "Peg2"}
+        %option Blue
+        %option Orange
+        %option Green
+        %option Purple
+        %option Yellow
+        %option Pink
+      %select{:name => "Peg3"}
+        %option Blue
+        %option Orange
+        %option Green
+        %option Purple
+        %option Yellow
+        %option Pink
+      %select{:name => "Peg4"}
+        %option Blue
+        %option Orange
+        %option Green
+        %option Purple
+        %option Yellow
+        %option Pink
       %input{:type => "submit", :value => "Guess!"}
     %form{:action => "/win"}
       %input{:type => "submit", :value => "Win!"}
