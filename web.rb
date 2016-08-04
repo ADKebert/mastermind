@@ -2,6 +2,8 @@ require "sinatra"
 
 require_relative "mastermind"
 
+$mastermind_cpu = MasterMind.new
 get "/" do
-  "Welcome to MasterMind"
+  @guesses = $mastermind_cpu.guess_history
+  haml :gameboard
 end

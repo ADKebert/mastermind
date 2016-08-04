@@ -26,7 +26,7 @@ class MasterMind
 
   # boolean, true if this result is a `win`
   def result_win?(result)
-    result == [:exact_match]*4
+    result == [:exact_match] * 4
   end
 
   # Make a guess, guess should be an Array
