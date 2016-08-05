@@ -7,6 +7,10 @@ body {
   display: flex;
 }
 
+.guess ul {
+  list-style: none;
+}
+
 .board {
   background-color: #595866;
   border-radius: 18px;

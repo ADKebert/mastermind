@@ -7,18 +7,17 @@
     %link{:href => "/css/main.css", :rel => "stylesheet"}
   %body
     %div.board{:style => "width: 250px; height: 400px"}
-      - @guesses.each do |guess|
+      - @guesses.each.with_index do |guess, i|
         %ul
           %li= guess[0]
           %li= guess[1]
           %li= guess[2]
           %li= guess[3]
-      - @results.each do |result|
-        %ul
-          %li= result[0]
-          %li= result[1]
-          %li= result[2]
-          %li= result[3]
+          %li
+          %li= @results[i][0]
+          %li= @results[i][1]
+          %li= @results[i][2]
+          %li= @results[i][3]
 
       %form#radio_guess{:action => "/", :method => "post"}
         %div.guess
