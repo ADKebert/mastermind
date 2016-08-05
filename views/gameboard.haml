@@ -6,41 +6,47 @@
     %title Mastermind
   %body
     %h1 Welcome to Mastermind!
-    %ul
-      - @guesses.each do |guess|
+    - @guesses.each do |guess|
+      %ul
         %li= guess[0]
         %li= guess[1]
         %li= guess[2]
         %li= guess[3]
+    - @results.each do |result|
+      %ul
+        %li= result[0]
+        %li= result[1]
+        %li= result[2]
+        %li= result[3]
     %form{:action => "/", :method => "post"}
       %select{:name => "Peg1"}
-        %option Blue
-        %option Orange
-        %option Green
-        %option Purple
-        %option Yellow
-        %option Pink
+        %option{:value => "Blue"}Blue
+        %option{:value => "Orange"}Orange
+        %option{:value => "Green"}Green
+        %option{:value => "Purple"}Purple
+        %option{:value => "Yellow"}Yellow
+        %option{:value => "Pink"}Pink
       %select{:name => "Peg2"}
-        %option Blue
-        %option Orange
-        %option Green
-        %option Purple
-        %option Yellow
-        %option Pink
+        %option{:value => "Blue"}Blue
+        %option{:value => "Orange"}Orange
+        %option{:value => "Green"}Green
+        %option{:value => "Purple"}Purple
+        %option{:value => "Yellow"}Yellow
+        %option{:value => "Pink"}Pink
       %select{:name => "Peg3"}
-        %option Blue
-        %option Orange
-        %option Green
-        %option Purple
-        %option Yellow
-        %option Pink
+        %option{:value => "Blue"}Blue
+        %option{:value => "Orange"}Orange
+        %option{:value => "Green"}Green
+        %option{:value => "Purple"}Purple
+        %option{:value => "Yellow"}Yellow
+        %option{:value => "Pink"}Pink
       %select{:name => "Peg4"}
-        %option Blue
-        %option Orange
-        %option Green
-        %option Purple
-        %option Yellow
-        %option Pink
+        %option{:value => "Blue"}Blue
+        %option{:value => "Orange"}Orange
+        %option{:value => "Green"}Green
+        %option{:value => "Purple"}Purple
+        %option{:value => "Yellow"}Yellow
+        %option{:value => "Pink"}Pink
       %input{:type => "submit", :value => "Guess!"}
     %form{:action => "/win"}
       %input{:type => "submit", :value => "Win!"}
