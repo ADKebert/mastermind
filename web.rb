@@ -12,12 +12,12 @@ get "/" do
 end
 
 post "/" do
-  guess = [params["Peg1"],
-           params["Peg2"],
-           params["Peg3"],
-           params["Peg4"]]
-  $mastermind_cpu.guess(guess)
-  if $mastermind_cpu.result_win?(guess)
+  result = $mastermind_cpu.guess [params["Peg1"],
+                                  params["Peg2"],
+                                  params["Peg3"],
+                                  params["Peg4"]]
+
+  if $mastermind_cpu.result_win?(result)
     redirect "/win"
   elsif $mastermind_cpu.guess_count >= 10
     redirect "/lose"
