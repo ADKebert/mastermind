@@ -1,0 +1,32 @@
+body {
+  display: flex;
+  align-items: center;
+}
+
+.guess {
+  display: flex;
+}
+
+.board {
+  background-color: #595866;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.bottom_nav {
+  margin-left: 20px;
+  background-image: url("/images/Metacognition.svg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom_navbar {
+  background-color: #595866;
+  border-radius: 18px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

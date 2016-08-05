@@ -4,53 +4,87 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %meta{:charset => "utf-8"}/
     %title Mastermind
+    %link{:href => "/css/main.css", :rel => "stylesheet"}
   %body
-    %h1 Welcome to Mastermind!
-    - @guesses.each do |guess|
-      %ul
-        %li= guess[0]
-        %li= guess[1]
-        %li= guess[2]
-        %li= guess[3]
-    - @results.each do |result|
-      %ul
-        %li= result[0]
-        %li= result[1]
-        %li= result[2]
-        %li= result[3]
-    %form{:action => "/", :method => "post"}
-      %select{:name => "Peg1"}
-        %option{:value => "Blue"}Blue
-        %option{:value => "Orange"}Orange
-        %option{:value => "Green"}Green
-        %option{:value => "Purple"}Purple
-        %option{:value => "Yellow"}Yellow
-        %option{:value => "Pink"}Pink
-      %select{:name => "Peg2"}
-        %option{:value => "Blue"}Blue
-        %option{:value => "Orange"}Orange
-        %option{:value => "Green"}Green
-        %option{:value => "Purple"}Purple
-        %option{:value => "Yellow"}Yellow
-        %option{:value => "Pink"}Pink
-      %select{:name => "Peg3"}
-        %option{:value => "Blue"}Blue
-        %option{:value => "Orange"}Orange
-        %option{:value => "Green"}Green
-        %option{:value => "Purple"}Purple
-        %option{:value => "Yellow"}Yellow
-        %option{:value => "Pink"}Pink
-      %select{:name => "Peg4"}
-        %option{:value => "Blue"}Blue
-        %option{:value => "Orange"}Orange
-        %option{:value => "Green"}Green
-        %option{:value => "Purple"}Purple
-        %option{:value => "Yellow"}Yellow
-        %option{:value => "Pink"}Pink
-      %input{:type => "submit", :value => "Guess!"}
-    %form{:action => "/win"}
-      %input{:type => "submit", :value => "Win!"}
-    %form{:action => "/lose"}
-      %input{:type => "submit", :value => "Lose!"}
-    %form{:action => "/restart", :method => "post"}
-      %input{:type => "submit", :value => "Restart!"}
+    %div.board{:style => "width: 250px; height: 400px"}
+      - @guesses.each do |guess|
+        %ul
+          %li= guess[0]
+          %li= guess[1]
+          %li= guess[2]
+          %li= guess[3]
+      - @results.each do |result|
+        %ul
+          %li= result[0]
+          %li= result[1]
+          %li= result[2]
+          %li= result[3]
+
+      %form#radio_guess{:action => "/", :method => "post"}
+        %div.guess
+
+          %div.guess_result
+            %ul
+              %li
+                %input{:type => "radio", :name => "Peg1", :value => "Blue"}
+              %li
+                %input{:type => "radio", :name => "Peg1", :value => "Orange"}
+              %li
+                %input{:type => "radio", :name => "Peg1", :value => "Green"}
+              %li
+                %input{:type => "radio", :name => "Peg1", :value => "Purple"}
+              %li
+                %input{:type => "radio", :name => "Peg1", :value => "Yellow"}
+              %li
+                %input{:type => "radio", :name => "Peg1", :value => "Pink"}
+
+          %div.guess_result
+            %ul
+              %li
+                %input{:type => "radio", :name => "Peg2", :value => "Blue"}
+              %li
+                %input{:type => "radio", :name => "Peg2", :value => "Orange"}
+              %li
+                %input{:type => "radio", :name => "Peg2", :value => "Green"}
+              %li
+                %input{:type => "radio", :name => "Peg2", :value => "Purple"}
+              %li
+                %input{:type => "radio", :name => "Peg2", :value => "Yellow"}
+              %li
+                %input{:type => "radio", :name => "Peg2", :value => "Pink"}
+
+          %div.guess_result
+            %ul
+              %li
+                %input{:type => "radio", :name => "Peg3", :value => "Blue"}
+              %li
+                %input{:type => "radio", :name => "Peg3", :value => "Orange"}
+              %li
+                %input{:type => "radio", :name => "Peg3", :value => "Green"}
+              %li
+                %input{:type => "radio", :name => "Peg3", :value => "Purple"}
+              %li
+                %input{:type => "radio", :name => "Peg3", :value => "Yellow"}
+              %li
+                %input{:type => "radio", :name => "Peg3", :value => "Pink"}
+
+          %div.guess_result
+            %ul
+              %li
+                %input{:type => "radio", :name => "Peg4", :value => "Blue"}
+              %li
+                %input{:type => "radio", :name => "Peg4", :value => "Orange"}
+              %li
+                %input{:type => "radio", :name => "Peg4", :value => "Green"}
+              %li
+                %input{:type => "radio", :name => "Peg4", :value => "Purple"}
+              %li
+                %input{:type => "radio", :name => "Peg4", :value => "Yellow"}
+              %li
+                %input{:type => "radio", :name => "Peg4", :value => "Pink"}
+
+    %div.bottom_nav{:style => "width: 150px; height: 150px"}
+      %div.bottom_navbar{:style => "width: 150px; height: 30px"}
+        %input{:form => "radio_guess", :type => "submit", :value => "Guess!"}
+        %form{:action => "/restart", :method => "post"}
+          %input{:type => "submit", :value => "Restart!"}

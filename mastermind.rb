@@ -101,7 +101,7 @@ end
 #
 if $0 == __FILE__
   game = MasterMind.new
-  user_guess = ["Red", "Green", "Green", "Blue"]
+  user_guess = %w{Red Green Green Blue}
   result = game.guess(user_guess)
   puts "The Game's secret is #{game.secret.inspect}"
   puts "And when guessing #{user_guess.inspect}"
