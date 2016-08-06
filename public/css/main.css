@@ -11,6 +11,95 @@ body {
   list-style: none;
 }
 
+.radio_hide input[type="radio"] {
+  display: none;
+}
+
+.radio_hide input[type="radio"] + span {
+  display:inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+.radio_hide input[type="radio"]:checked + span {
+  display:inline-block;
+  width:12px;
+  height:12px;
+  border: 2px solid white;
+  box-shadow: 0 0 0 2px black;
+  border-radius:  50%;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+.radio_hide input[value="Blue"] + span {
+    background-color: blue;
+}
+
+.radio_hide input[value="Blue"]:checked + span {
+  background-color: blue;
+}
+
+.radio_hide input[value="Orange"] + span {
+    background-color: orange;
+}
+
+.radio_hide input[value="Orange"]:checked + span {
+  background-color: Orange;
+}
+
+.radio_hide input[value="Green"] + span {
+    background-color: green;
+}
+
+.radio_hide input[value="Green"]:checked + span {
+  background-color: green;
+}
+
+.radio_hide input[value="Purple"] + span {
+    background-color: purple;
+}
+
+.radio_hide input[value="Purple"]:checked + span {
+  background-color: purple;
+}
+
+.radio_hide input[value="Yellow"] + span {
+    background-color: yellow;
+}
+
+.radio_hide input[value="Yellow"]:checked + span {
+  background-color: Yellow;
+}
+
+.radio_hide input[value="Pink"] + span {
+    background-color: pink;
+}
+
+.radio_hide input[value="Pink"]:checked + span {
+  background-color: pink;
+}
+
+.guess {
+  display: flex;
+  justify-content: space-around;
+  /*border: 1px solid red;*/
+}
+
+.guess_options {
+  /*border: 1px solid blue;*/
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.guess_options:nth-child(-n + 3) {
+  border-right: 1px solid #2c2844;
+}
+
 .board {
   background-color: #595866;
   border-radius: 18px;
