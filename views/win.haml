@@ -10,3 +10,7 @@
       %h1 You win!
       %form{:action => "/restart", :method => "post"}
         %input{:type => "submit", :value => "Play Again"}
+      %div.stats
+        %p="Games Played: #{$game_stats.played}"
+        %p="Games Won: #{$game_stats.won}"
+        %p="Minimum Guesses to Win: #{$game_stats.min_to_win}"

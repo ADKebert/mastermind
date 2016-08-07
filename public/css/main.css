@@ -215,8 +215,6 @@ div .result_peg {
 }
 
 .winner, .loser {
-  font-family: "Lobster Two", cursive;
-  font-size: 3em;
   white-space: nowrap;
   display: flex;
   flex-direction: column;
@@ -224,7 +222,35 @@ div .result_peg {
   align-items: center;
 }
 
-.winner input, .loser input {
+.winner h1, .loser h1 {
+  font-family: "Lobster Two", cursive;
+  font-size: 4em;
+}
+
+.winner .stats {
+  margin-top: 10px;
+  color: #fffdfc;
+  background-color: #6496c8;
+  text-shadow: -1px 1px #417cb8;
+  padding: 4px;
+  border-radius: 18px;
+}
+
+.loser .stats {
+  margin-top: 10px;
+  color: #fffdfc;
+  background-color: #17061c;
+  text-shadow: -1px 1px #5b17c9;
+  padding: 4px;
+  border-radius: 18px;
+}
+
+.winner p, .loser p {
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+}
+
+.winner input {
   width: 90px;
   display: inline-block;
   margin: 5px 0 5px 0;
@@ -242,14 +268,41 @@ div .result_peg {
   border: none;
 }
 
-.winner input:hover, .loser input:hover {
+.loser input {
+  width: 90px;
+  display: inline-block;
+  margin: 5px 0 5px 0;
+  padding: 2px 4px;
+  font-size: 14px;
+  font-family: "Oswald",sans-serif;
+  line-height: 1.8;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 0;
+  color: #fffdfc;
+  background-color: #17061c;
+  text-shadow: -1px 1px #5b17c9;
+  border-radius: 50%/50%;
+  border: none;
+}
+.winner input:hover {
   background-color: #346392;
   text-shadow: -1px 1px #27496d;
 }
 
-.winner input:active, .loser input:active {
+.loser input:hover {
+  background-color: #5b176f;
+  text-shadow: -1px 1px #5b17c9;
+}
+
+.winner input:active {
   background-color: #27496d;
   text-shadow: -1px 1px #193047;
+}
+
+.loser input:active {
+  background-color: #9927ba;
+  text-shadow: -1px 1px #6c1cec;
 }
 
 .winner input:focus, .loser input:focus {

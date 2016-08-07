@@ -10,26 +10,7 @@
     %header{:style => "width: 250px"}
       %h1 Mastermind
     %div.board{:style => "width: 250px; height: 450px"}
-      - @guesses.reverse_each.with_index do |guess, i|
-        %div.prev_guess
-          %div.prev_peg
-            %div.guess_peg{ :name => "#{guess[0]}" }
-            %div.result_peg{ :name => "#{@results.reverse[i][0]}" }
-
-          %div.prev_peg
-            %div.guess_peg{ :name => "#{guess[1]}" }
-            %div.result_peg{ :name => "#{@results.reverse[i][1]}" }
-
-          %div.prev_peg
-            %div.guess_peg{ :name => "#{guess[2]}" }
-            %div.result_peg{ :name => "#{@results.reverse[i][2]}" }
-
-          %div.prev_peg
-            %div.guess_peg{ :name => "#{guess[3]}" }
-            %div.result_peg{ :name => "#{@results.reverse[i][3]}" }
-
-      %div.prev_g
-      %form#radio_guess{:action => "/", :method => "post"}
+      %form#radio_guess{:action => "/player1_picks", :method => "post"}
         %div.guess
 
           %div.guess_options
@@ -134,9 +115,4 @@
               %span
 
     %div.bottom_navbar{:style => "width: 250px; height: 40px"}
-      %input{:form => "radio_guess", :type => "submit", :value => "Guess"}
-      -if !$mastermind_cpu.player_secret? && $mastermind_cpu.guess_count == 0
-        %form{:action => "player1_picks"}
-          %input{:type => "submit", :value => "2 Player"}
-      %form{:action => "/restart", :method => "post"}
-        %input{:type => "submit", :value => "Restart"}
+      %input{ :form => "radio_guess", :type => "submit", :value => "Set Secret"}

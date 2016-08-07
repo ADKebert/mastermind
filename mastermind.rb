@@ -7,6 +7,17 @@ class MasterMind
     @secret = PEG_COLORS.shuffle.take(4)
     @guess_history = []
     @result_history = []
+    @player_secret = false
+  end
+
+  # Defining my own secret setter for players
+  def player_secret=(new_secret)
+    @player_secret = true
+    self.secret = new_secret
+  end
+
+  def player_secret?
+    @player_secret
   end
 
   # How many guesses have we done?
