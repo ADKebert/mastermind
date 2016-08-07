@@ -1,5 +1,11 @@
+@media (max-height: 530px) {
+  body {
+    transform: scale(0.85) translateY(-40px);
+  }
+}
+
 body {
-  margin-top: 0;
+  margin: 2px 0 0 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -9,7 +15,7 @@ body {
 header h1 {
   font-family: "Lobster Two", cursive;
   background-color: #17061c;
-  color: white;
+  color: #fffdfc;
   text-shadow: -1px 1px #5b17c9;
   text-align: center;
   margin-top: 0;
@@ -96,7 +102,7 @@ div .result_peg {
   width:12px;
   height:12px;
   border: 2px solid #595866;
-  box-shadow: 0 0 0 2px white;
+  box-shadow: 0 0 0 2px #fffdfc;
   border-radius:  50%;
   margin-left: 1px;
   margin-right: 1px;
@@ -188,7 +194,7 @@ div .result_peg {
   appearance: none;
   box-shadow: none;
   border-radius: 0;
-  color: white;
+  color: #fffdfc;
   background-color: #6496c8;
   text-shadow: -1px 1px #417cb8;
   border-radius: 50%/50%;
@@ -230,7 +236,7 @@ div .result_peg {
   appearance: none;
   box-shadow: none;
   border-radius: 0;
-  color: white;
+  color: #fffdfc;
   background-color: #6496c8;
   text-shadow: -1px 1px #417cb8;
   border-radius: 50%/50%;
