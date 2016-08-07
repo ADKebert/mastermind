@@ -1,14 +1,81 @@
 body {
+  margin-top: 0;
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
 }
 
-.guess {
-  display: flex;
+header h1 {
+  font-family: "Lobster Two", cursive;
+  background-color: #17061c;
+  color: white;
+  text-shadow: -1px 1px #5b17c9;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
 }
 
-.guess ul {
-  list-style: none;
+.board {
+  background-color: #595866;
+  background-image: url("/images/Metacognition.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  /*border-radius: 18px;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/*Defining the layout of the previous guess display*/
+div .prev_guess {
+  background-color: #595866;
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #2c2844;
+  /*border-bottom: 1px solid #2c2844;*/
+}
+
+div .prev_peg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div .guess_peg {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: darkgrey;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+div .result_peg {
+  width: 14px;
+  height: 14px;
+  background-color: darkgrey;
+  margin-bottom: 4px;
+}
+
+/*Layout for where the guess is made*/
+.guess {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.guess_options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.guess_options:nth-child(-n + 3) {
+  border-right: 1px solid #2c2844;
 }
 
 .radio_hide input[type="radio"] {
@@ -28,98 +95,175 @@ body {
   display:inline-block;
   width:12px;
   height:12px;
-  border: 2px solid white;
-  box-shadow: 0 0 0 2px black;
+  border: 2px solid #595866;
+  box-shadow: 0 0 0 2px white;
   border-radius:  50%;
   margin-left: 1px;
   margin-right: 1px;
 }
 
+/*Setting the color for guesses and radio buttons*/
+
+.guess_peg[name="Blue"] {
+  background-color: #3e3ffb;
+}
+.guess_peg[name="Orange"] {
+  background-color: #eb8419;
+}
+.guess_peg[name="Green"] {
+  background-color: #19bb33;
+}
+.guess_peg[name="Purple"] {
+  background-color: #5e0495;
+}
+.guess_peg[name="Yellow"] {
+  background-color: #f9f368;
+}
+.guess_peg[name="Pink"] {
+  background-color: #d12acb;
+}
+.result_peg[name="exact_match"] {
+  background-color: #e03434;
+}
+.result_peg[name="inexact_match"] {
+  background-color: #fffdfc;
+}
+.result_peg[name="miss"] {
+  background-color: #17061c;
+}
 .radio_hide input[value="Blue"] + span {
-    background-color: blue;
+    background-color: #3e3ffb;
 }
-
 .radio_hide input[value="Blue"]:checked + span {
-  background-color: blue;
+  background-color: #3e3ffb;
 }
-
 .radio_hide input[value="Orange"] + span {
-    background-color: orange;
+    background-color: #eb8419;
 }
-
 .radio_hide input[value="Orange"]:checked + span {
-  background-color: Orange;
+  background-color: #eb8419;
 }
-
 .radio_hide input[value="Green"] + span {
-    background-color: green;
+    background-color: #19bb33;
 }
-
 .radio_hide input[value="Green"]:checked + span {
-  background-color: green;
+  background-color: #19bb33;
 }
-
 .radio_hide input[value="Purple"] + span {
-    background-color: purple;
+    background-color: #5e0495;
 }
-
 .radio_hide input[value="Purple"]:checked + span {
-  background-color: purple;
+  background-color: #5e0495;
 }
-
 .radio_hide input[value="Yellow"] + span {
-    background-color: yellow;
+    background-color: #f9f368;
 }
-
 .radio_hide input[value="Yellow"]:checked + span {
-  background-color: Yellow;
+  background-color: #f9f368;
 }
-
 .radio_hide input[value="Pink"] + span {
-    background-color: pink;
+    background-color: #d12acb;
 }
-
 .radio_hide input[value="Pink"]:checked + span {
-  background-color: pink;
-}
-
-.guess {
-  display: flex;
-  justify-content: space-around;
-  /*border: 1px solid red;*/
-}
-
-.guess_options {
-  /*border: 1px solid blue;*/
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.guess_options:nth-child(-n + 3) {
-  border-right: 1px solid #2c2844;
-}
-
-.board {
-  background-color: #595866;
-  border-radius: 18px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-
-.bottom_nav {
-  margin-left: 20px;
-  background-image: url("/images/Metacognition.svg");
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: #d12acb;
 }
 
 .bottom_navbar {
-  background-color: #595866;
-  border-radius: 18px;
+  background-color: #17061c;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.bottom_navbar input {
+  width: 70px;
+  display: inline-block;
+  margin: 5px 0 5px 0;
+  padding: 2px 4px;
+  font-size: 14px;
+  font-family: "Oswald",sans-serif;
+  line-height: 1.8;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 0;
+  color: white;
+  background-color: #6496c8;
+  text-shadow: -1px 1px #417cb8;
+  border-radius: 50%/50%;
+  border: none;
+}
+
+.bottom_navbar input:hover {
+  background-color: #346392;
+  text-shadow: -1px 1px #27496d;
+}
+
+.bottom_navbar input:active {
+  background-color: #27496d;
+  text-shadow: -1px 1px #193047;
+}
+
+.bottom_navbar input:focus {
+  outline: none;
+}
+
+.winner, .loser {
+  font-family: "Lobster Two", cursive;
+  font-size: 3em;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.winner input, .loser input {
+  width: 90px;
+  display: inline-block;
+  margin: 5px 0 5px 0;
+  padding: 2px 4px;
+  font-size: 14px;
+  font-family: "Oswald",sans-serif;
+  line-height: 1.8;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 0;
+  color: white;
+  background-color: #6496c8;
+  text-shadow: -1px 1px #417cb8;
+  border-radius: 50%/50%;
+  border: none;
+}
+
+.winner input:hover, .loser input:hover {
+  background-color: #346392;
+  text-shadow: -1px 1px #27496d;
+}
+
+.winner input:active, .loser input:active {
+  background-color: #27496d;
+  text-shadow: -1px 1px #193047;
+}
+
+.winner input:focus, .loser input:focus {
+  outline: none;
+}
+.winner h1 {
+  width: 400px;
+  text-align: center;
+  color: #e6d939;
+  background-color: #6496c8;
+  text-shadow: -1px 1px #417cb8;
+  border-radius: 50%/50%;
+}
+
+.loser h1 {
+  width: 400px;
+  text-align: center;
+  color: #98b3f7;
+  background-color: #17061c;
+  border-radius: 50%/50%;
+  text-shadow: -1px 1px #5b17c9;
 }
