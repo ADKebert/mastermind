@@ -40,8 +40,7 @@ div .prev_guess {
   background-color: #595866;
   display: flex;
   justify-content: space-around;
-  border-top: 1px solid #2c2844;
-  /*border-bottom: 1px solid #2c2844;*/
+  border-top: 2px ridge #2c2844;
 }
 
 div .prev_peg {
@@ -63,7 +62,7 @@ div .result_peg {
   width: 14px;
   height: 14px;
   background-color: darkgrey;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 
 /*Layout for where the guess is made*/
@@ -81,7 +80,7 @@ div .result_peg {
 }
 
 .guess_options:nth-child(-n + 3) {
-  border-right: 1px solid #2c2844;
+  border-right: 2px ridge #2c2844;
 }
 
 .radio_hide input[type="radio"] {
