@@ -4,6 +4,8 @@ require "sinatra/reloader" if development?
 require_relative "mastermind"
 require_relative "stats"
 
+set :bind, '0.0.0.0'
+
 $mastermind_cpu = MasterMind.new
 $game_stats = Stats.new
 

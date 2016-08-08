@@ -7,9 +7,9 @@
     %title Mastermind
     %link{:href => "/css/main.css", :rel => "stylesheet"}
   %body
-    %header{:style => "width: 250px"}
+    %header
       %h1 Mastermind
-    %div.board{:style => "width: 250px; height: 450px"}
+    %div.board
       - @guesses.reverse_each.with_index do |guess, i|
         %div.prev_guess
           %div.prev_peg
@@ -133,7 +133,7 @@
               %input{:type => "radio", :name => "Peg4", :value => "Pink"}
               %span
 
-    %div.bottom_navbar{:style => "width: 250px; height: 40px"}
+    %div.bottom_navbar
       %input{:form => "radio_guess", :type => "submit", :value => "Guess"}
       -if !$mastermind_cpu.player_secret? && $mastermind_cpu.guess_count == 0
         %form{:action => "player1_picks"}
