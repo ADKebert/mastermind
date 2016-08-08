@@ -39,6 +39,12 @@ get "/player1_picks" do
 end
 
 post "/player1_picks" do
+  pegs = %w{Peg1 Peg2 Peg3 Peg4}
+  pegs.each do |peg|
+    if params[peg].nil?
+      redirect "/player1_picks"
+    end
+  end
   $mastermind_cpu.player_secret = [params["Peg1"],
                                    params["Peg2"],
                                    params["Peg3"],
